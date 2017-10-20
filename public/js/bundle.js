@@ -9,7 +9,9 @@ let obj = {
 	console.log($("h1").text())
 		
 	})
-	}
+	},
+
+	bad: function(){}
 }
 
 
@@ -18,16 +20,16 @@ module.exports = obj;
 },{}],2:[function(require,module,exports){
 /* global $ */
 "use strict";
-let script = require('./another-script.js');
+let script = require('./js-fundementals-quiz.js');
 
 
 class SomeClass {
 	myMethod(){
-		script.message()
+		console.log("ffff")
 	}
 }
 
 var instance = new SomeClass()
 instance.myMethod()
 
-},{"./another-script.js":1}]},{},[2]);
+},{"./js-fundementals-quiz.js":1}]},{},[2]);

@@ -1,11 +1,11 @@
 /* global $ */
 "use strict";
-let script = require('./another-script.js');
+let script = require('./js-fundementals-quiz.js');
 
 
 class SomeClass {
 	myMethod(){
-		script.message()
+		console.log("ffff")
 	}
 }
 
