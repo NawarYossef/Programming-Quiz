@@ -1,0 +1,59 @@
+@import url("whitespace-reset.css");
+
+body {
+	background-image: url("../images/background-img.jpg")
+}
+
+main {
+	max-width: 60%;
+	margin: 5% auto 0 auto;
+	background-color: rgb(204, 195, 198);
+	color: #04050a;
+	padding-bottom: 40px;
+	border-radius: 20px;
+}
+
+.container {
+	text-align: center;
+	margin-bottom: 20px;
+} */
+
+ h1 {
+	font: bold 32px Helvetica, sans-serif;
+}
+
+ul li, p {
+	font-size: 20px;
+}
+
+p:nth-child(1) {
+	font: bold 24px Helvetica, sans-serif;
+	margin-bottom: 20px;
+}
+
+ul {
+	width: 60%;
+	margin: 0 auto;
+}
+
+ul li {
+	background-color: orange;
+	display: block;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 20px;
+	box-shadow: 1 1 2;
+	margin: 10px auto 0 auto;
+}
+
+ul li:hover, ul li:active {
+	cursor: pointer;
+	background-color: brown;
+	border-radius: 20px;
+	outline-style: none;
+
+}
+
+
+
+

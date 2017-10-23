@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NawarYossef/test-heroku.git"
+    "url": ""
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NawarYossef/test-heroku/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/NawarYossef/test-heroku#readme",
+  "homepage": "",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.3",
@@ -25,6 +25,7 @@
     "lodash": "^4.17.4"
   },
   "devDependencies": {
-    "browserify": "^14.4.0"
+    "browserify": "^14.4.0",
+    "check-dependencies": "^1.1.0"
   }
 }

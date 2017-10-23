@@ -4,7 +4,7 @@
 	<title>Coder Quiz</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style1.css">
   <!--<link rel="stylesheet" type="text/css" href="stylesheets/modules/sass.css">-->
   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
@@ -14,31 +14,64 @@
 <body>
   <main role="main">
     <div class="container">
-      <h2>1- Which of the following solutions cna be used to convert the string "1234" to an array of numbers [1, 2, 3, 4]:</h2>
-    </div>
-    <div class="container">
-      <div class="answer">String("1234").Array((char) => char.toNumber())</div>
-      <div class="answer">Array.from("1234").map(Number)</div>
-      <div class="answer">"1234".map(Number).toArray()</div>
-      <div class="answer">"1234".split('').Array().Number()</div>
-    </div>
-  </main>
-</body>
-</html>
-
-
-
-<!-- <main role="main">
-    <div class="container">
       <h1>Get Your Code On</h1>
       <p>Are You Ready To Test your Coding-fu?</p>
     </div>
 
     <div class="container">
       <p>Choose a topic</p>
-      <button>JavaScript-Fundemental</button>
-      <button>JavaScript-Advanced Topics</button>
-      <button>HTML/CSS</button>
-      <button>Git-Version Control</button>
+      <ul>
+        <li class="quiz-btn">JavaScript-Fundemental</li>
+        <li class="quiz-btn">JavaScript-Advanced Topics</li>
+        <li class="quiz-btn">HTML/CSS</li>
+        <li class="quiz-btn">Git-Version Control</li>
+      </ul>
     </div>
-  </main> -->
+  </main> 
+
+  <section class="questions" role="section">
+    <div class="container">
+      <h2></h2>
+    </div>
+		<div class="container">
+			<form id="my-form">
+        <div class="option">
+          <input type="radio" id="1" name="choice"><label class="answer"></label>
+        </div>
+        <div class="option">
+          <input type="radio" id="2" name="choice"><label class="answer"></label>
+        </div>
+        <div class="option">
+          <input type="radio" id="3" name="choice"><label class="answer"></label>
+        </div>
+        <div class="option">
+          <input type="radio" id="4" name="choice"><label class="answer"></label>
+        </div>
+				
+      </form>
+
+      <div class="correct-ans">
+          <p><span>&#10004;</span>Correct</p>
+      </div>
+
+      <div class="wrong-ans">
+          <p><span>&#10006;</span>Incorrect</p>
+      </div>
+
+      <div class="count">
+        <p class="question-count"></p>
+      </div>
+    </div>
+    <div class="btn-nav">
+      <input type="button" class="back-to-main" value="Back To Main Page">
+      <input type="button" class="next-q" value="Next Question" disabled>
+    </div>
+  </section>
+
+  
+
+  <script type="text/javascript" src="js/bundle.js"></script> 
+</body>
+</html>
+
+  

@@ -1,0 +1,77 @@
+/* quiz stlye */
+body {
+	/* background-image: url("../images/background-img.jpg"); */
+	/* background-color: black; */
+}
+
+section {
+	max-width: 60%;
+	margin: 5% auto 0 auto;
+	background-color: rgb(204, 195, 198);
+	color: #04050a;
+	padding-bottom: 40px;
+	border-radius: 20px;
+}
+
+.container {
+	width: 60%;
+	text-align: left;
+	margin: 0 0 10px 20px;
+}
+
+h2 {
+	font: bold 24px Helvetica, sans-serif;
+	padding-top: 10px;
+}
+
+label {
+	font: normal 18px Helvetica, sans-serif;
+}
+
+input[type="radio"] {
+	float: left;
+	vertical-align: middle;
+	width: 20px;
+}
+
+.option {
+	margin-bottom: 20px;
+}
+
+.option:hover {
+	background-color: green;
+	border-radius: 20px;
+}
+
+.answer:hover, input[type="radio"]:hover {
+	cursor: pointer; 
+}
+
+
+.btn-nav {
+	margin-left: 40px;
+	display: block;
+}
+
+
+input[type="button"] {
+	width: 20%;
+	height: 40px;
+	background-color: orange;
+	border: none;
+	padding-left: 5px;
+	border-radius: 20px;
+	box-shadow: 1 1 2;
+	margin: 10px auto 0 10px;
+	outline: none;
+}
+
+input[type=button]:hover, input[type=button]:active {
+	cursor: pointer;
+	background-color: brown;
+	border-radius: 20px;
+	outline-style: none;
+
+} 
+
+
