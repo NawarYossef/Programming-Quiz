@@ -32,7 +32,7 @@
 
   <section class="questions" role="section">
     <div class="container">
-      <h2></h2>
+      <h3></h3>
     </div>
 		<div class="container form-cont">
 			<form id="my-form">
@@ -51,7 +51,18 @@
 				
       </form>
 
-      
+      <div class="final-score">
+        <h3>Results</h3>
+        <ul>
+          <li>Total Number of Question: <span></span></li>
+          <li>Correct Answers: <span></span></li>
+          <li>Incorrect Answers: <span></span></li>
+        </ul>
+        <div class="btn-nav">
+          <input type="button" class="back-to-main" value="Back To Main Page">
+          <input type="button" class="next-q" value="Resetart Quiz" disabled>
+        </div>
+      </div>
 
       <div class="correct-ans">
           <p><span>&#10004;</span>Correct! Select next to continue.</p>
@@ -65,13 +76,13 @@
         <p class="question-count"></p>
       </div>
     </div>
+
     <div class="btn-nav">
       <input type="button" class="back-to-main" value="Back To Main Page">
       <input type="button" class="next-q" value="Next Question" disabled>
+      <input type="button" class="results" value="Results">
     </div>
   </section>
-
-  
 
   <script type="text/javascript" src="js/bundle.js"></script> 
 </body>
