@@ -17140,7 +17140,7 @@ let data = {
 	},
 	2: {
 		question: 'What will the following code log to the console:',
-		answers: ['Austin Powersss', 'Austin', 'Powers', 'Dr. Evil'],
+		answers: ['Austin Powers', 'Austin', 'Powers', 'Dr. Evil'],
 		correctAnswer: 1
 	}, 
 	3: {
@@ -17185,7 +17185,7 @@ let _ = require('lodash');
 class QuizApp {
 	constructor() {
 	 this.state = '';
-	 this.userChoiceIdx = ''
+	 this.userChoiceIdx = '';
 	 this.index = 1;
 	}
 
@@ -17240,14 +17240,17 @@ class QuizApp {
 		})
 	}
 
-	getUserChoice() {
+	getUserChoiceAndShowResult() {
 		let that = this;
 		$(".option").click(function() {
-			// radio box will be checked when user makes a choice
-			$(this).find("input").prop('checked', true);
+	
 			// collect user choice
 			that.userChoiceIdx = $(this).find("input").attr("id")
-			console.log(Number(that.userChoiceIdx) === that.state[that.index]["correctAnswer"])
+
+			// hide multiple choices in order to display result only
+			that.formHide();
+
+			// show result based on user choice collected
 			that.showResult()
 		})
 		
@@ -17258,6 +17261,14 @@ class QuizApp {
 		return Number(this.userChoiceIdx) === this.state[this.index]["correctAnswer"]
 	}
 
+	formHide() {
+		$("form").fadeOut(500).hide()	
+	}
+
+	showForm() {
+		$("form").fadeIn(300).show()
+	}
+
 	showResult() {
 		if (this.userMadeRightChoice()) {
 			$(".correct-ans").fadeIn(200)
@@ -17265,34 +17276,59 @@ class QuizApp {
 			$(".wrong-ans").fadeIn(200)
 		}
 	}
+
+	hideResult() {
+		$(".correct-ans").hide()
+		$(".wrong-ans").hide()
+	}
+
+	enableNextButton() {
+		$(".option").click(function() {
+			$(".next-q").prop('disabled', false);
+		})
+		
+	}
+
+	disableNextButton() {
+		$(".next-q" ).click(function() {
+			$(this).prop('disabled', true);
+		})
+	}
 	
 	renderNextQuestion() {
 		let that = this;
 		$(".next-q" ).click(function() {
 			that.index += 1;
+			// render current index for question
 			that.questionCount()
-			$("h2").text(that.state[index]["question"])
 
-			$("li").each(function(i, ele) {
-				$(this).text(that.state[index]["answers"][i])
+			that.hideResult()
+			that.showForm()
+
+			$("h2").text(that.state[that.index]["question"])
+
+			$(".answer").each(function(idx, ele) {
+				$(this).text(that.state[that.index]["answers"][idx])
 			})
-			index += 1;
-		})
-		
+		})	
 	}	
 
-	
+	init() {
+		this.hideQuiz();
+		this.whichQuiz();
+		this.renderQuizMarkup();
+		this.quizStyleRender();
+		this.questionCount();
+		this.displayFirstQuestion();
+		this.getUserChoiceAndShowResult();
+		this.enableNextButton();
+		this.renderNextQuestion();
+		this.disableNextButton()
+	}
 }
 
-
 var app = new QuizApp()
-app.hideQuiz()
-app.whichQuiz()
-app.renderQuizMarkup()
-app.quizStyleRender()
-app.questionCount()
-app.displayFirstQuestion()
-app.getUserChoice()
+app.init()
 
 
 

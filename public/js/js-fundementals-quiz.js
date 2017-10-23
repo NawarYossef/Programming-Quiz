@@ -10,7 +10,7 @@ let data = {
 	},
 	2: {
 		question: 'What will the following code log to the console:',
-		answers: ['Austin Powersss', 'Austin', 'Powers', 'Dr. Evil'],
+		answers: ['Austin Powers', 'Austin', 'Powers', 'Dr. Evil'],
 		correctAnswer: 1
 	}, 
 	3: {

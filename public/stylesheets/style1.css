@@ -20,6 +20,7 @@ main {
 
  h1 {
 	font: bold 32px Helvetica, sans-serif;
+	margin-left: 10px;
 }
 
 ul li, p {

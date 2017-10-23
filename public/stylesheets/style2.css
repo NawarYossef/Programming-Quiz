@@ -1,7 +1,6 @@
 /* quiz stlye */
 body {
-	/* background-image: url("../images/background-img.jpg"); */
-	/* background-color: black; */
+	background-image: url("../images/background-img.jpg");
 }
 
 section {
@@ -20,7 +19,7 @@ section {
 }
 
 h2 {
-	font: bold 24px Helvetica, sans-serif;
+	font: 28px "museo-sans-rounded",sans-serif;
 	padding-top: 10px;
 }
 
@@ -66,7 +65,7 @@ input[type="button"] {
 	outline: none;
 }
 
-input[type=button]:hover, input[type=button]:active {
+input[type=button]:hover {
 	cursor: pointer;
 	background-color: brown;
 	border-radius: 20px;
