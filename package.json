@@ -1,7 +1,7 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "",
+  "description": "Quiz App",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,18 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/NawarYossef/coder-quiz.git"
   },
-  "author": "",
+  "author": "Nawar Yossef",
   "license": "ISC",
   "bugs": {
     "url": ""
   },
-  "homepage": "",
+  "homepage": "https://github.com/NawarYossef/coder-quiz#readme",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.3",
-    "jquery": "^3.2.1",
     "jsdom": "^11.1.0",
     "lodash": "^4.17.4"
   },
