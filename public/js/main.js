@@ -40,7 +40,7 @@ class QuizApp {
 	}
 
 	renderMainPageMarkUp() {
-		$("main").fadeIn(1200).show()
+		$("main").fadeIn(200).show()
 	}
 	
 	mainPageStyleRender() {
