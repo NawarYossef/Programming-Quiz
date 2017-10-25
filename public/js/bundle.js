@@ -17090,12 +17090,55 @@
 /* global $ */
 "use strict";
 
+let data = {
+	1: {
+		question: 'In this code example(click on Code Example button to view code), which css rule we need to add in order to align the two squares?',
+    answers: [".square1 {display: inline-block; }", ".square2 {float: left}", ".square1, .square2 {align: both}", ".square2 {display: inline}"],
+    link: "https://codepen.io/nawaryossef/pen/PJLoRe",
+    correctAnswer: 1
+	},
+	2: {
+		question: "Which CSS property is best used if the content of an element exceeds the size of the element's box:",
+		answers: ["overflow", "hide()", "animate.element", ".contain-Class"],
+		correctAnswer: 1
+	},
+
+	3: {
+		question: 'When building standard website, it is best to avoid using the {position:absolute} CSS rule because:',
+		answers: ["it makes the web page look smaller in size and makes colors brighter", "it becomes difficult to apply responsive design and control the flow of the page",  "it add more padding and margin to all elements on the page", "it affects the performace of any JavaScript code on the page"],
+    correctAnswer: 2
+	},
+	4: {
+		question: 'In this code example, which CSS rule can be used to add to only display the text inside the blue box?',
+    answers: ["{display: none;}", "{apply(css.div)}", "{hide: text;}", "{overflow: hidden;}"],
+    link: "https://codepen.io/nawaryossef/pen/pNKavm",
+    correctAnswer: 4
+	},
+	5: {
+		question: "We use the HTML DOCTYPE because: ",
+    answers: ["It tells the browser which version of HTML the page is written in", "It performs a GET request to the browser", "It contains all the HTML data that gets sent to the server", "None of the above"],
+    correctAnswer: 1
+	},
+	6: {
+		question: 'Setting an element to {display: none;} is the same as:',
+    answers: ["visibility: hidden", "background: none", "$().hide()", "none of the above"],
+    correctAnswer: 4
+	}
+}
+
+module.exports = data
+
+
+},{}],3:[function(require,module,exports){
+/* global $ */
+"use strict";
+
 
 let data = {
   1: {
     question: 'In ES6, the "class" is:',
-    answers: ['a function that provides better syntax without changing the prototype inheritance model', 'a function that implements pure Object Ortinted design similar to that of C++ and Java', 
-    'a Juqery method used to create contsructor functions', 'a keyword only used for Object orinted programming in Node.js'],
+    answers: ['a function that provides better syntax without changing the prototype inheritance model', 'a function that implements pure Object Oriented design similar to that of C++ and Java',
+    'a Jquery method used to create constructor functions', 'a keyword only used for Object oriented programming in Node.js'],
     correctAnswer: 1
   }, 
   2: {
@@ -17104,19 +17147,23 @@ let data = {
     correctAnswer: 4
   },
   3: {
-    question: 'In this code example, "HELLO" is not displayed. What is wrong with the Jquery code?',
-    answers: ['the "this " keyword binds the click event to the Window object which returns undefined', 'Event listeners do not apply to "button" elements. This is flaw in the Jquery library. a "button" tag needs to be replaced with "a" tag.', 
-    '"$(this)" needs to replace "this" becuase $("this") will create a jquery object and enable the use of the ".click()" method.', 'none of the above'],
+    question: 'In this code example(click on Code Example button to view code), "HELLO" is not displayed. What is wrong with the Jquery code?',
+    answers: ['the "this " keyword binds the click event to the Window object which returns undefined', 'Event listeners do not apply to "button" elements. This is flaw in the Jquery library. a "button" tag needs to be replaced with "a" tag.',
+    '"$(this)" needs to replace "this" because $("this") will create a jquery object and enable the use of the ".click()" method.', 'none of the above'],
+    link: "https://codepen.io/nawaryossef/pen/XNWNXR",
     correctAnswer: 3
+
   }, 
   4: {
     question: 'In this code example. The code alerts "undefined" to the screen. In order to resolve this issue we need to:',
-    answers: ['on line-8: we need to change "function()" to an arrow function "$(() => )"', 'on line-3: use let value = "Hello World" instead of using the ".this" keyword to initialize a variable', 'on line-14: use "var" instead of "let"', 'none of the above'],
+    answers: ['on line-8: we need to change "function()" to an arrow function "$(() => )"', 'on line-3: use (let value = "Hello World") instead of using the ".this" keyword to initialize a variable', 'on line-14: use "var" instead of "let"', 'none of the above'],
+    link: "https://codepen.io/nawaryossef/pen/PJVrea",
     correctAnswer: 1
+    //2
   },
   5: {
     question: ' In javascript "String" is a:',
-    answers: ['sub-type of a class', 'sub-type of a method', 'sub-type of an object', 'sub-type of a string'],
+    answers: ['subtype of a class', 'subtype of a method', 'subtype of an object', 'subtype of a string'],
     correctAnswer: 3
   },
   6: {
@@ -17127,59 +17174,64 @@ let data = {
 }
 
 module.exports = data
-},{}],3:[function(require,module,exports){
+
+  
+},{}],4:[function(require,module,exports){
 /* global $ */
 "use strict";
 
-
 let data = {
 	1: {
-		question: 'Which of the following solutions cna be used to convert the string "1234" to an array of numbers [1, 2, 3, 4]:',
-		answers: ['String("1234").Array((char) => char.toNumber())', 'Array.from("1234").map(Number)', '"1234".map(Number).toArray()', '"1234".split("").Array().Number()'],
-		correctAnswer: 2
+		question: 'Which of the following solutions can be used to convert the string "1234" to an array of numbers [1, 2, 3, 4]:',
+    answers: ['String("1234").Array((char) => char.toNumber())', 'Array.from("1234").map(Number)', '"1234".map(Number).toArray()', '"1234".split("").Array().Number()'],
+    correctAnswer: 2
 	},
 	2: {
-		question: 'What will the following code log to the console:',
+		question: 'In this code example(click on Code Example button to view code), What will the code log to the console:',
 		answers: ['Austin Powers', 'Austin', 'Powers', 'Dr. Evil'],
+		link: "https://codepen.io/nawaryossef/pen/eGwWmZ",
 		correctAnswer: 1
-	}, 
+	},
+
 	3: {
-		question: 'In this code example, the event.preventDefault() method: ',
-		answers: ['binds each anchor element to the "body" element', 'stops the default behavior of the anchor element', 'prevents the function from running is Closure is Present', "doesn't run because its not a Juqery method"],
-		correctAnswer: 2
+		question: 'In this code example, the "event.preventDefault()" method: ',
+		answers: ['binds each anchor element to the "body" element', 'prevents the function from running inside a closure',  'stops the default behavior of the anchor element', "doesn't run because it's not a Jquery method"],
+		link: "https://codepen.io/nawaryossef/pen/qPvoqO",
+    correctAnswer: 3
 	},
 	4: {
-		question: 'What will this code Boolean(!true) log to the console:',
+		question: 'What will this code "Boolean(!true)" log to the console:',
 		answers: ['true', 'false', '!true', 'undefined'],
 		correctAnswer: 2
 	},
 	5: {
-		question: 'We need to organize the following array elements in descending order [3, 4, 1, 67, 32, 7]. which method should we use:',
-		answers: ['organize()', 'rise()', 'sort()', 'none of the above'],
-		correctAnswer: 3
+		question: 'Which of the following algorithms is used to organize the array elements “[3, 4, 1, 67, 32, 7]” in an ascending order:',
+    answers: ['[3, 4, 1, 67, 32, 7].sort((a,b) => a - b)', '[3, 4, 1, 67, 32, 7].sort((a,b) => a + b)', 'sort(all)', '[3, 4, 1, 67, 32, 7].sort((a,b) => b - a)'],
+    correctAnswer: 1
 	},
 	6: {
-		question: 'In this code snipit, the function square returns an array of "undefined" ([undefined, undefined, undefined, undefined]) instead of an array of squared numbers. This is because:',
-		answers: [' a "return" keyword needs to be added before "num * num"', 'a "return" statement should never be used with the .map() method', ' the array is being mutated inside a function', 
+		question: 'In this code example, the function square returns an array of "undefined" ([undefined, undefined, undefined, undefined]) instead of an array of squared numbers. This is because:',
+    answers: [' a "return" keyword needs to be added before "num * num"', 'a "return" statement should never be used with the .map() method', ' the array is being mutated inside a function',
 		'Wait! there is nothing wrong with that function. It returns the expected result.'],
-		correctAnswer: 1
+		link: "https://codepen.io/nawaryossef/pen/aLMYXZ",
+    correctAnswer: 1
 	},
 	7: {
-		question: 'what is the value of "originalArray" after we run the code bellow',
+		question: 'In this code example, what is the value of "originalArray" after we run the code?',
 		answers: ['[4, 1, 2, 3]', '[1, 2, 3]', '[1, 2, 3, "4"]', '[1, 2, 3, 4]'],
+		link: "https://codepen.io/nawaryossef/pen/aLMYgm",
 		correctAnswer: 4
 	}	
 }
 
-
-
 module.exports = data
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /* global $ */
 "use strict";
 const javascriptFundementals = require('./js-fundementals-quiz.js');
 const advancedJavascript = require('./js-advanced.js');
+const htmlCss = require('./html-css-quiz.js');
 const _ = require('lodash');
 
 class QuizApp {
@@ -17187,6 +17239,8 @@ class QuizApp {
 	 this.state = '';
 	 this.userChoiceIdx = '';
 	 this.index = 1;
+	 this.allCorrectAns = 0
+	 this.allWrongAns = 0
 	}
 
 	whichQuiz() {
@@ -17196,18 +17250,21 @@ class QuizApp {
 				that.state = javascriptFundementals;
 			} else if ($(this).text() === "JavaScript-Advanced Topics") {
 				that.state = advancedJavascript;
+			} else if ($(this).text() === "HTML/CSS") {
+				that.state = htmlCss;
 			}
 		})
 	}
 
 	hideQuiz() {
-		$(".questions, .correct-ans, .wrong-ans, .count, .final-score, .results").hide();
+		$(".cont-q, .ques-form, .correct-ans, .wrong-ans, .question-count, .btn-nav").hide();
 	}
 
 	renderQuizMarkup() {
-		$(".quiz-btn").click(function() {
+		$(".quiz-btn").click(() => {
 			$("main").hide()
-			$(".questions, .count").fadeIn(200)	
+			$(".ques-form, .cont-q, .btn-nav, .question-count").fadeIn(300)	
+			this.hideGoToExampleCodeText();
 		})
 	}
 
@@ -17227,7 +17284,7 @@ class QuizApp {
 	
 	questionCount() {
 		let range = Object.keys(this.state).length;
-		$(".question-count").text(`${this.index}/${range}`);
+		$(".question-count").text(`${this.index}/${range} Questions`);
 		
 		//hide next question if it's the last question on the quiz
 		this.hideNextQuesButton();
@@ -17239,16 +17296,34 @@ class QuizApp {
 			// show question count
 			this.questionCount();
 
-			$("h3").text(this.state[this.index]["question"])
+			$(".question").text(this.state[this.index]["question"])
 
 			let context = this;
 			$(".answer").each(function(idx, ele) {
 				$(this).text(context.state[context.index]["answers"][idx])
 			})
+
+			// show "go to example" button
+			this.renderExampleButton();
+			
 		})
 	}
 
-	getUserChoiceAndShowResult() {
+	renderExampleButton() {
+		if (this.state[this.index]["link"] === undefined) {
+			this.hideExampleButton()
+			this.hideGoToExampleCodeText()
+			
+		} else {
+			this.showExampleButton()
+			this.goToExampleCodeTextShow();
+
+			// attach a link to anchor tag if the question includes a code example on 'codepen.io' 
+			$(".example").attr('href', this.state[this.index]["link"])
+		}
+	}
+
+	getUserChoiceAnalize() {
 		$(".option").click((e) => {
 			// collect user choice
 			this.userChoiceIdx = $(e.currentTarget).find("input").attr("id")
@@ -17256,11 +17331,16 @@ class QuizApp {
 			// hide multiple choices in order to display result only
 			this.formHide();
 
+			// calculate how many question are correct and how many are wrong
+			this.calcResult()
+
 			// show result based on user choice collected
 			this.showResult();
 
 			//allow user to go to next question
 			this.enableNextButton();
+
+			this.hideGoToExampleCodeText();
 		})
 		
 	}
@@ -17271,7 +17351,7 @@ class QuizApp {
 	}
 
 	formHide() {
-		$("form").fadeOut(500).hide();
+		$("form").fadeOut(200).hide();
 	}
 
 	showForm() {
@@ -17279,19 +17359,43 @@ class QuizApp {
 	}
 
 	hideQuestion() {
-		$("h3").hide();
+		$(".question").hide();
 	}
 
 	showQuestion() {
-		$("h3").show()
+		$(".question").show()
 	}
+
+	finalScoreHide(){
+		$(".final-score").hide();
+	}
+
+	showFinalScore() {
+		$(".total-q").children("span").text(`${Object.keys(this.state).length}`)
+		$(".corr-ans").children("span").text(`${this.allCorrectAns}`)
+		$(".wrn-ans").children("span").text(`${this.allWrongAns}`)
+		$(".final-score").fadeIn(200).show();
+	}
+
 	wrongAnsText() {
 		let pos = this.state[this.index]["correctAnswer"] - 1
-		let text = $(`<p class="corr-ans-display">${this.state[this.index]["answers"][pos]}</p>`)
-		$(".wrong-ans").append(text);
+		$(".corr-text").text(`${this.state[this.index]["answers"][pos]}`);
+	}
+
+	calcResult() {
+		if (this.userMadeRightChoice()) {
+			this.allCorrectAns += 1
+		} else if (this.userMadeRightChoice() === false) {
+			this.allWrongAns += 1
+		}
 	}
 
 	showResult() {
+
+		//hide "go to code examples" button and hide text instruction on how to use the button 
+		this.hideExampleButton();	
+		this.hideGoToExampleCodeText();
+
 		if (this.userMadeRightChoice()) {
 			$(".correct-ans").fadeIn(200)
 			// hide question
@@ -17300,7 +17404,6 @@ class QuizApp {
 			this.wrongAnsText()
 			$(".wrong-ans").fadeIn(200)
 		}
-
 		this.renderResultsButton()
 	}
 
@@ -17311,13 +17414,45 @@ class QuizApp {
 	}
 
 	enableNextButton() {
-		$(".next-q").prop('disabled', false);
+		$(".next-q-btn").prop('disabled', false);
+		//style next-question button
+		$(".next-q-btn").addClass("button-class")
 	}
 
 	disableNextButton() {
-		$(".next-q").prop('disabled', true);
+		$(".next-q-btn").prop('disabled', true);
+		$("button-class").remove();
+	}
+
+	hideExampleButton() {
+		$(".example").hide();
+	}
+
+	showExampleButton() {
+		$(".example").show();
+	}
+
+	styleExampleBtn() {
+		$(".code-example").addClass("button-class")
+	}
+	goToExampleCodeTextShow() {
+		$(".count-q").append('<h4 class="text-instruc"><span class="star">&#9734;</span>click the "Code Example" button to view example on codepen.io</h4>')
+	}
+
+	hideGoToExampleCodeText() {
+		$(".count-q").empty()
 	}
 	
+	hideMainPageImages() {
+		$(".quiz-btn, .results-btn, .img-cont").click(() => {
+			$(".img-cont").hide();
+		})
+	}
+
+	showMainPageImages() {
+		$(".img-cont").fadeIn(200).show();
+	}
+
 	updateStateForNextQuestion() {
 		this.showQuestion();
 		this.questionCount();
@@ -17327,11 +17462,15 @@ class QuizApp {
 	}
 
 	renderNextQuestion() {
-		$(".next-q" ).click(() => {
+		$(".next-q-btn" ).click(() => {
 			this.index += 1;
-			this.updateStateForNextQuestion()
-
-			$("h3").text(this.state[this.index]["question"]);
+			this.updateStateForNextQuestion();
+			this.hideGoToExampleCodeText();
+		
+			$(".question").text(this.state[this.index]["question"]);
+			
+			// show example button
+			this.renderExampleButton()
 
 			let that = this;
 			$(".answer").each(function(idx, ele) {
@@ -17343,38 +17482,94 @@ class QuizApp {
 	//hide next question if it's the last question on the quiz
 	hideNextQuesButton() {
 		let range = Object.keys(this.state).length
-		this.index === range ? $(".next-q").hide() : null;
+		this.index === range ? $(".next-q-btn").hide() : null;
+	}
+
+	showNextQuesButton() {
+		$(".next-q-btn").show()
 	}
 	
 	mainPageHeaderShow() {
 		$("h2").show();
 	}
 
-	emptyQuestion() {
-		$("h3").empty();
+	hideResultsBtn(){
+		$(".results-btn").hide()
 	}
-	
-	backToMainDefaultState() {
+
+	defaultState() {
+		this.state = '';
+		this.userChoiceIdx = '';
+		this.index = 1;
+		this.allCorrectAns = 0;
+		this.allWrongAns = 0;
+	}
+
+	backToMainPage() {
 		$(".back-to-main").click(() => {
-			this.state = '';
-			this.userChoiceIdx = '';
-			this.index = 1;
-			this.hideQuiz();
+			this.showMainPageImages();
+			this.defaultState();
+			this.hideStats();
+			this.showForm();
 			this.mainPageStyleRender();
 			this.renderMainPageMarkUp();
 			this.mainPageHeaderShow();
-			this.emptyQuestion();
+			this.showQuestion();
+			this.hideResultsBtn();
+			this.showNextQuesButton();
+			this.finalScoreHide();
+			this.hideQuiz();
+			this.disableNextButton();
+			this.hideGoToExampleCodeText()
 		})
-	}
-	
+	}	
 
 	renderResultsButton() {
 		let range = Object.keys(this.state).length
-		this.index === range ? $(".results").show() : null;
+		this.index === range ? $(".results-btn").show() : null;
 	}
 
-	// shuffle questions
-	// show final result
+	showFinalResult() {
+		$(".results-btn").click(() => {
+			this.hideQuiz();
+			this.showFinalScore();
+		})
+	}
+
+	// retakeQuiz() {
+	// 	$(".retake-quiz").click(() => {
+	// 		this.userChoiceIdx = '';
+	// 		this.index = 1;
+	// 		this.allCorrectAns = 0;
+	// 		this.allWrongAns = 0;
+
+	// 		$("main").hide()
+	// 		$(".question-count").empty();
+	// 		$(".ques-form, .cont-q, .btn-nav, .question-count").fadeIn(300)	
+	// 		// this.quizStyleRender();
+	// 		$('link[href="stylesheets/style1.css"]').attr({'href' : "stylesheets/style2.css"})
+	// 		this.questionCount();
+
+	// 		// this.displayFirstQuestion();
+	// 		$(".question").text(this.state[this.index]["question"])
+			
+	// 			let context = this;
+	// 			$(".answer").each(function(idx, ele) {
+	// 				$(this).text(context.state[context.index]["answers"][idx])
+	// 			})
+
+	// 		this.showNextQuesButton();
+	// 		this.updateStateForNextQuestion();
+	// 		this.showForm();
+	// 		this.getUserChoiceAnalize();
+	// 		this.renderNextQuestion();
+	// 		this.backToMainPage();
+	// 		this.showFinalResult();
+	// 		this.finalScoreHide();
+	// 		this.hideResultsBtn();
+	// 	})
+	// }
+
 	init() {
 		this.hideQuiz();
 		this.whichQuiz();
@@ -17382,9 +17577,14 @@ class QuizApp {
 		this.quizStyleRender();
 		this.questionCount();
 		this.displayFirstQuestion();
-		this.getUserChoiceAndShowResult();
+		this.getUserChoiceAnalize();
 		this.renderNextQuestion();
-		this.backToMainDefaultState();
+		this.backToMainPage();
+		this.showFinalResult();
+		this.finalScoreHide();
+		this.hideResultsBtn();
+		this.hideMainPageImages();
+		this.styleExampleBtn();
 	}
 }
 
@@ -17399,4 +17599,4 @@ app.init()
 
 
 
-},{"./js-advanced.js":2,"./js-fundementals-quiz.js":3,"lodash":1}]},{},[4]);
+},{"./html-css-quiz.js":2,"./js-advanced.js":3,"./js-fundementals-quiz.js":4,"lodash":1}]},{},[5]);

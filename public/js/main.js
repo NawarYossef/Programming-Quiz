@@ -2,6 +2,7 @@
 "use strict";
 const javascriptFundementals = require('./js-fundementals-quiz.js');
 const advancedJavascript = require('./js-advanced.js');
+const htmlCss = require('./html-css-quiz.js');
 const _ = require('lodash');
 
 class QuizApp {
@@ -9,6 +10,8 @@ class QuizApp {
 	 this.state = '';
 	 this.userChoiceIdx = '';
 	 this.index = 1;
+	 this.allCorrectAns = 0
+	 this.allWrongAns = 0
 	}
 
 	whichQuiz() {
@@ -18,18 +21,21 @@ class QuizApp {
 				that.state = javascriptFundementals;
 			} else if ($(this).text() === "JavaScript-Advanced Topics") {
 				that.state = advancedJavascript;
+			} else if ($(this).text() === "HTML/CSS") {
+				that.state = htmlCss;
 			}
 		})
 	}
 
 	hideQuiz() {
-		$(".questions, .correct-ans, .wrong-ans, .count, .final-score, .results").hide();
+		$(".cont-q, .ques-form, .correct-ans, .wrong-ans, .question-count, .btn-nav").hide();
 	}
 
 	renderQuizMarkup() {
-		$(".quiz-btn").click(function() {
+		$(".quiz-btn").click(() => {
 			$("main").hide()
-			$(".questions, .count").fadeIn(200)	
+			$(".ques-form, .cont-q, .btn-nav, .question-count").fadeIn(300)	
+			this.hideGoToExampleCodeText();
 		})
 	}
 
@@ -49,7 +55,7 @@ class QuizApp {
 	
 	questionCount() {
 		let range = Object.keys(this.state).length;
-		$(".question-count").text(`${this.index}/${range}`);
+		$(".question-count").text(`${this.index}/${range} Questions`);
 		
 		//hide next question if it's the last question on the quiz
 		this.hideNextQuesButton();
@@ -61,16 +67,34 @@ class QuizApp {
 			// show question count
 			this.questionCount();
 
-			$("h3").text(this.state[this.index]["question"])
+			$(".question").text(this.state[this.index]["question"])
 
 			let context = this;
 			$(".answer").each(function(idx, ele) {
 				$(this).text(context.state[context.index]["answers"][idx])
 			})
+
+			// show "go to example" button
+			this.renderExampleButton();
+			
 		})
 	}
 
-	getUserChoiceAndShowResult() {
+	renderExampleButton() {
+		if (this.state[this.index]["link"] === undefined) {
+			this.hideExampleButton()
+			this.hideGoToExampleCodeText()
+			
+		} else {
+			this.showExampleButton()
+			this.goToExampleCodeTextShow();
+
+			// attach a link to anchor tag if the question includes a code example on 'codepen.io' 
+			$(".example").attr('href', this.state[this.index]["link"])
+		}
+	}
+
+	getUserChoiceAnalize() {
 		$(".option").click((e) => {
 			// collect user choice
 			this.userChoiceIdx = $(e.currentTarget).find("input").attr("id")
@@ -78,11 +102,16 @@ class QuizApp {
 			// hide multiple choices in order to display result only
 			this.formHide();
 
+			// calculate how many question are correct and how many are wrong
+			this.calcResult()
+
 			// show result based on user choice collected
 			this.showResult();
 
 			//allow user to go to next question
 			this.enableNextButton();
+
+			this.hideGoToExampleCodeText();
 		})
 		
 	}
@@ -93,7 +122,7 @@ class QuizApp {
 	}
 
 	formHide() {
-		$("form").fadeOut(500).hide();
+		$("form").fadeOut(200).hide();
 	}
 
 	showForm() {
@@ -101,19 +130,43 @@ class QuizApp {
 	}
 
 	hideQuestion() {
-		$("h3").hide();
+		$(".question").hide();
 	}
 
 	showQuestion() {
-		$("h3").show()
+		$(".question").show()
 	}
+
+	finalScoreHide(){
+		$(".final-score").hide();
+	}
+
+	showFinalScore() {
+		$(".total-q").children("span").text(`${Object.keys(this.state).length}`)
+		$(".corr-ans").children("span").text(`${this.allCorrectAns}`)
+		$(".wrn-ans").children("span").text(`${this.allWrongAns}`)
+		$(".final-score").fadeIn(200).show();
+	}
+
 	wrongAnsText() {
 		let pos = this.state[this.index]["correctAnswer"] - 1
-		let text = $(`<p class="corr-ans-display">${this.state[this.index]["answers"][pos]}</p>`)
-		$(".wrong-ans").append(text);
+		$(".corr-text").text(`${this.state[this.index]["answers"][pos]}`);
+	}
+
+	calcResult() {
+		if (this.userMadeRightChoice()) {
+			this.allCorrectAns += 1
+		} else if (this.userMadeRightChoice() === false) {
+			this.allWrongAns += 1
+		}
 	}
 
 	showResult() {
+
+		//hide "go to code examples" button and hide text instruction on how to use the button 
+		this.hideExampleButton();	
+		this.hideGoToExampleCodeText();
+
 		if (this.userMadeRightChoice()) {
 			$(".correct-ans").fadeIn(200)
 			// hide question
@@ -122,7 +175,6 @@ class QuizApp {
 			this.wrongAnsText()
 			$(".wrong-ans").fadeIn(200)
 		}
-
 		this.renderResultsButton()
 	}
 
@@ -133,13 +185,45 @@ class QuizApp {
 	}
 
 	enableNextButton() {
-		$(".next-q").prop('disabled', false);
+		$(".next-q-btn").prop('disabled', false);
+		//style next-question button
+		$(".next-q-btn").addClass("button-class")
 	}
 
 	disableNextButton() {
-		$(".next-q").prop('disabled', true);
+		$(".next-q-btn").prop('disabled', true);
+		$("button-class").remove();
+	}
+
+	hideExampleButton() {
+		$(".example").hide();
+	}
+
+	showExampleButton() {
+		$(".example").show();
+	}
+
+	styleExampleBtn() {
+		$(".code-example").addClass("button-class")
+	}
+	goToExampleCodeTextShow() {
+		$(".count-q").append('<h4 class="text-instruc"><span class="star">&#9734;</span>click the "Code Example" button to view example on codepen.io</h4>')
+	}
+
+	hideGoToExampleCodeText() {
+		$(".count-q").empty()
 	}
 	
+	hideMainPageImages() {
+		$(".quiz-btn, .results-btn, .img-cont").click(() => {
+			$(".img-cont").hide();
+		})
+	}
+
+	showMainPageImages() {
+		$(".img-cont").fadeIn(200).show();
+	}
+
 	updateStateForNextQuestion() {
 		this.showQuestion();
 		this.questionCount();
@@ -149,11 +233,15 @@ class QuizApp {
 	}
 
 	renderNextQuestion() {
-		$(".next-q" ).click(() => {
+		$(".next-q-btn" ).click(() => {
 			this.index += 1;
-			this.updateStateForNextQuestion()
-
-			$("h3").text(this.state[this.index]["question"]);
+			this.updateStateForNextQuestion();
+			this.hideGoToExampleCodeText();
+		
+			$(".question").text(this.state[this.index]["question"]);
+			
+			// show example button
+			this.renderExampleButton()
 
 			let that = this;
 			$(".answer").each(function(idx, ele) {
@@ -165,38 +253,94 @@ class QuizApp {
 	//hide next question if it's the last question on the quiz
 	hideNextQuesButton() {
 		let range = Object.keys(this.state).length
-		this.index === range ? $(".next-q").hide() : null;
+		this.index === range ? $(".next-q-btn").hide() : null;
+	}
+
+	showNextQuesButton() {
+		$(".next-q-btn").show()
 	}
 	
 	mainPageHeaderShow() {
 		$("h2").show();
 	}
 
-	emptyQuestion() {
-		$("h3").empty();
+	hideResultsBtn(){
+		$(".results-btn").hide()
 	}
-	
-	backToMainDefaultState() {
+
+	defaultState() {
+		this.state = '';
+		this.userChoiceIdx = '';
+		this.index = 1;
+		this.allCorrectAns = 0;
+		this.allWrongAns = 0;
+	}
+
+	backToMainPage() {
 		$(".back-to-main").click(() => {
-			this.state = '';
-			this.userChoiceIdx = '';
-			this.index = 1;
-			this.hideQuiz();
+			this.showMainPageImages();
+			this.defaultState();
+			this.hideStats();
+			this.showForm();
 			this.mainPageStyleRender();
 			this.renderMainPageMarkUp();
 			this.mainPageHeaderShow();
-			this.emptyQuestion();
+			this.showQuestion();
+			this.hideResultsBtn();
+			this.showNextQuesButton();
+			this.finalScoreHide();
+			this.hideQuiz();
+			this.disableNextButton();
+			this.hideGoToExampleCodeText()
 		})
-	}
-	
+	}	
 
 	renderResultsButton() {
 		let range = Object.keys(this.state).length
-		this.index === range ? $(".results").show() : null;
+		this.index === range ? $(".results-btn").show() : null;
 	}
 
-	// shuffle questions
-	// show final result
+	showFinalResult() {
+		$(".results-btn").click(() => {
+			this.hideQuiz();
+			this.showFinalScore();
+		})
+	}
+
+	// retakeQuiz() {
+	// 	$(".retake-quiz").click(() => {
+	// 		this.userChoiceIdx = '';
+	// 		this.index = 1;
+	// 		this.allCorrectAns = 0;
+	// 		this.allWrongAns = 0;
+
+	// 		$("main").hide()
+	// 		$(".question-count").empty();
+	// 		$(".ques-form, .cont-q, .btn-nav, .question-count").fadeIn(300)	
+	// 		// this.quizStyleRender();
+	// 		$('link[href="stylesheets/style1.css"]').attr({'href' : "stylesheets/style2.css"})
+	// 		this.questionCount();
+
+	// 		// this.displayFirstQuestion();
+	// 		$(".question").text(this.state[this.index]["question"])
+			
+	// 			let context = this;
+	// 			$(".answer").each(function(idx, ele) {
+	// 				$(this).text(context.state[context.index]["answers"][idx])
+	// 			})
+
+	// 		this.showNextQuesButton();
+	// 		this.updateStateForNextQuestion();
+	// 		this.showForm();
+	// 		this.getUserChoiceAnalize();
+	// 		this.renderNextQuestion();
+	// 		this.backToMainPage();
+	// 		this.showFinalResult();
+	// 		this.finalScoreHide();
+	// 		this.hideResultsBtn();
+	// 	})
+	// }
+
 	init() {
 		this.hideQuiz();
 		this.whichQuiz();
@@ -204,9 +348,14 @@ class QuizApp {
 		this.quizStyleRender();
 		this.questionCount();
 		this.displayFirstQuestion();
-		this.getUserChoiceAndShowResult();
+		this.getUserChoiceAnalize();
 		this.renderNextQuestion();
-		this.backToMainDefaultState();
+		this.backToMainPage();
+		this.showFinalResult();
+		this.finalScoreHide();
+		this.hideResultsBtn();
+		this.hideMainPageImages();
+		this.styleExampleBtn();
 	}
 }
 

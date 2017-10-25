@@ -1,12 +1,12 @@
 @import url("whitespace-reset.css");
 
 body {
-	background-image: url("../images/background-img.jpg")
+	background-image: url("../images/background-img.jpg");
 }
 
 main {
-	max-width: 60%;
-	margin: 5% auto 0 auto;
+	width: 60%;
+	margin: 2% auto 0 auto;
 	background-color: rgb(204, 195, 198);
 	color: #04050a;
 	padding-bottom: 40px;
@@ -16,19 +16,42 @@ main {
 .container {
 	text-align: center;
 	margin-bottom: 20px;
-} */
+} 
 
  h1 {
-	font: bold 32px Helvetica, sans-serif;
-	margin-left: 10px;
+	 width: 30%;
+	 padding-left: 100px;
+	 margin: 20px auto 0 auto;
+	font: bold 4em 'Passion One', cursive;
+  background: -webkit-linear-gradient(rgb(12, 0, 0), rgb(90, 87, 87));
+  -webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;	
+}
+
+h2 {
+	font: bold 4em 'Katibeh', cursive, sans-serif;
+	color: #262d4f;
+}
+
+img {
+	width: 10%;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.img-cont {
+	width: 30%;
+	margin: 0 auto;
+	padding-left: 350px;
 }
 
 ul li, p {
-	font-size: 20px;
+	font: normal 1.25em sans-serif;
 }
 
 p:nth-child(1) {
-	font: bold 24px Helvetica, sans-serif;
+	font: bold 1.5em Helvetica, sans-serif;
+	color: #262d4f;
 	margin-bottom: 20px;
 }
 
@@ -56,5 +79,201 @@ ul li:hover, ul li:active {
 }
 
 
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+
+	h1 {
+		font-size: 2em;
+		width: 60%;
+		margin: 0 auto;
+		padding-left: 30px;
+		padding-right: 0px;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+	
+	.img-cont {
+		width: 60%;
+		margin: 0 auto;
+		padding-left: 80px;
+	}
+	
+	ul {
+		width: 90%;
+	}
+
+	ul li {
+		font-size: 0.75em;
+	}
+}
 
 
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) and (max-width : 375px) {
+	h1 {
+		font-size: 3em;
+		width: 64%;
+		margin: 0 auto;
+		padding: 0 0;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+	
+	.img-cont {
+		width: 64%;
+		margin: 0 auto;
+		padding-left: 120px;
+	}
+
+	ul {
+		width: 90%;
+	}
+	
+	ul li {
+		font-size: 0.75em;
+	}
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 376px) and (max-width : 425px) {
+	h1 {
+		font-size: 3em;
+		width: 60%;
+		margin: 0 auto;
+		padding-left: 30px;
+	}
+
+	h2 {
+		font-size: 2em;
+	}
+
+	.img-cont {
+		width: 60%;
+		margin: 0 auto;
+		padding-left: 120px;
+	}
+
+	ul {
+		width: 90%;
+	}
+	
+	ul li {
+		font-size: 0.75em;
+	}
+}
+
+/* Tablets ----------- */
+@media only screen and (min-width : 426px) and (max-width : 768px) {
+	h1 {
+		font-size: 3em;
+		width: 65%;
+		margin: 0 auto;
+		padding-left: 240px;
+	}
+
+	/* main {
+		width: 80%;
+		margin: 0 auto;
+	} */
+
+
+	h2 {
+		font-size: 3em;
+	}
+
+	.img-cont {
+		width: 40%;
+		margin: 0 auto;
+		padding-left: 140px;
+	}
+
+	ul {
+		width: 90%;
+	}
+	
+	ul li {
+		font-size: 1em;
+	}
+}
+
+/* Laptop ----------- */
+@media only screen and (min-width : 769px) and (max-width : 1024px) {
+	h1 {
+		font-size: 4em;
+		width: 60%;
+		margin: 0 auto;
+		padding-left: 310px;
+	}
+
+	/* main {
+		width: 80%;
+		margin: 0 auto;
+	} */
+
+
+	h2 {
+		font-size: 3em;
+	}
+
+	.img-cont {
+		width: 40%;
+		margin: 0 auto;
+		padding-left: 240px;
+	}
+
+	ul {
+		width: 90%;
+	}
+	
+	ul li {
+		font-size: 1.25em;
+	}
+}
+
+/* Laptop ----------- */
+@media only screen and (min-width : 1025px) and (max-width : 1440px) {
+	h1 {
+		font-size: 4em;
+		width: 25%;
+		margin: 0 auto;
+		padding-right: 80px;
+	}
+
+	h2 {
+		font-size: 3em;
+	}
+
+	.img-cont {
+		width: 40%;
+		margin: 0 auto;
+		padding-left: 340px;
+	}
+
+	ul {
+		width: 90%;
+	}
+	
+	ul li {
+		font-size: 1.25em;
+	}
+}
+
+/* 4K ----------- */
+@media only screen and (min-width : 1441px) and (max-width : 2560px) {
+	h1 {
+		font-size: 4em;
+		width: 25%;
+		margin: 0 auto;
+		padding-left: 320px;
+	}
+
+	.img-cont {
+		width: 20%;
+		margin: 0 auto;
+		padding-left: 300px;
+	}
+}
