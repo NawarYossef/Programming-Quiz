@@ -17450,7 +17450,7 @@ class QuizApp {
 	}
 
 	showMainPageImages() {
-		$(".img-cont").fadeIn(200).show();
+		$(".img-cont").fadeIn(500).show();
 	}
 
 	updateStateForNextQuestion() {
@@ -17507,13 +17507,13 @@ class QuizApp {
 
 	backToMainPage() {
 		$(".back-to-main").click(() => {
+			this.mainPageStyleRender();
+			this.renderMainPageMarkUp();
+			this.mainPageHeaderShow();
 			this.showMainPageImages();
 			this.defaultState();
 			this.hideStats();
 			this.showForm();
-			this.mainPageStyleRender();
-			this.renderMainPageMarkUp();
-			this.mainPageHeaderShow();
 			this.showQuestion();
 			this.hideResultsBtn();
 			this.showNextQuesButton();
