@@ -5,6 +5,11 @@ body {
 	background-color: #6F9683;
 }
 
+body.fade-out {
+	opacity: 0;
+	transition: none;
+}
+
 main {
 	width: 60%;
 	margin: 2% auto 0 auto;
@@ -17,7 +22,7 @@ main {
 .container {
 	text-align: center;
 	margin-bottom: 20px;
-} 
+} 	
 
  h1 {
 	 width: 30%;

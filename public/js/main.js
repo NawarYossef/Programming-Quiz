@@ -40,9 +40,9 @@ class QuizApp {
 	}
 
 	renderMainPageMarkUp() {
-		$("main").fadeIn(200).show()
+		$("main").fadeIn(1200).show()
 	}
-
+	
 	mainPageStyleRender() {
 		$('link[href="stylesheets/style2.css"]').attr({'href' : "stylesheets/style1.css"})
 	}
