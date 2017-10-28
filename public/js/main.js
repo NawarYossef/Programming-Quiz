@@ -140,7 +140,7 @@ class QuizApp {
 	}
 
 	formHide() {
-		$("form").fadeOut(200).hide();
+		$("form").fadeOut(100).hide();
 	}
 
 	showForm() {
@@ -239,7 +239,7 @@ class QuizApp {
 	}
 
 	showMainPageImages() {
-		$(".img-cont").fadeIn(400).show();
+		$(".img-cont").fadeIn(250).show();
 	}
 
 	updateStateForNextQuestion() {
