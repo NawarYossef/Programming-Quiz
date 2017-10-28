@@ -30,11 +30,21 @@ let data = {
     //2
   },
   5: {
+    question: '"0" == false will return',
+    anwers: ['false', 'true', 'undefined', 'null'],
+    correctAnswer: 2
+  },
+  6: {
     question: ' In javascript "String" is a:',
     answers: ['subtype of a class', 'subtype of a method', 'subtype of an object', 'subtype of a string'],
     correctAnswer: 3
   },
-  6: {
+  7: {
+    question: 'What is the return value when we call the ".map()" method and the ".forEach()" on an array?',
+    anwers: ['.map() returns the same array without iteration. forEach() returns a new array', '.map() returns a new array based on transformation. forEach() returns the same array', 'both methods return the same array', "none of the above"],
+    correctAnswer: 2
+  },
+  8: {
     question: '"1" == 1 will return',
     anwers: ['false', 'true', 'undefined', 'null'],
     correctAnswer: 2
