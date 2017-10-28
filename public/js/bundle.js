@@ -17092,9 +17092,54 @@
 
 let data = {
 	1: {
+		question: ' The command to use for initializing a new Git repository is: ',
+    answers: ["git add .", "git push", "git commit", "git init"],
+    correctAnswer: 4
+	},
+	2: {
+		question: "We've just created a new file called index.html. Which of the following will stage this one file so we can commit it?",
+		answers: ["git commit index.html", "git stage index.html", "git add index.html", "none of the above"],
+		correctAnswer: 3
+	},
+
+	3: {
+		question: 'How would you commit a staged file with this with the message "change background color',
+		answers: ['git commit -m "change backgroud color"', 'git commit "change background color"', 'git add message "change background color"', 'git -m "add background color"'],
+    correctAnswer: 1
+	},
+	4: {
+		question: 'We made changes to a lot of files and want to stage them all using one command. which command should we use?',
+    answers: ["git add", "git add .", "git add ...", "git add commit"],
+    correctAnswer: 2
+	},
+	5: {
+		question: "You have finished implementing a new feature on a branch, you want to bring that new feature into the main branch, so that everyone can use it. Which command will you use?",
+    answers: ["git add all", "git merge all", "git merge", "git add"],
+    correctAnswer: 3
+	},
+	6: {
+		question: 'What is the name of the file used to tell Git to ignore certain files?',
+    answers: ["gitignore", ".gitignore",   "ignore.git",   ".ignore"],
+    correctAnswer: 2
+  },
+  7: {
+		question: 'What command do you run to view the commit history of your repository?',
+    answers: ["git history",  "git log",  "git commit -h",  "git past"],
+    correctAnswer: 2
+  }
+}
+
+module.exports = data
+
+
+},{}],3:[function(require,module,exports){
+/* global $ */
+"use strict";
+
+let data = {
+	1: {
 		question: 'In this code example(click on Code Example button to view code), which css rule we need to add in order to align the two squares?',
     answers: [".square1 {display: inline-block; }", ".square2 {float: left}", ".square1, .square2 {align: both}", ".square2 {display: inline}"],
-    link: "https://codepen.io/nawaryossef/pen/PJLoRe",
     correctAnswer: 1
 	},
 	2: {
@@ -17111,7 +17156,6 @@ let data = {
 	4: {
 		question: 'In this code example, which CSS rule can be used to add to only display the text inside the blue box?',
     answers: ["{display: none;}", "{apply(css.div)}", "{hide: text;}", "{overflow: hidden;}"],
-    link: "https://codepen.io/nawaryossef/pen/pNKavm",
     correctAnswer: 4
 	},
 	5: {
@@ -17129,7 +17173,7 @@ let data = {
 module.exports = data
 
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 /* global $ */
 "use strict";
 
@@ -17176,7 +17220,7 @@ let data = {
 module.exports = data
 
   
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /* global $ */
 "use strict";
 
@@ -17226,12 +17270,13 @@ let data = {
 
 module.exports = data
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /* global $ */
 "use strict";
 const javascriptFundementals = require('./js-fundementals-quiz.js');
 const advancedJavascript = require('./js-advanced.js');
 const htmlCss = require('./html-css-quiz.js');
+const versionControl = require('./git-quiz.js');
 const _ = require('lodash');
 
 class QuizApp {
@@ -17248,6 +17293,8 @@ class QuizApp {
 		$(".quiz-btn").click(function() {
 			if($(this).text() === "JavaScript-Fundemental") {
 				that.state = javascriptFundementals;
+			} else if ($(this).text() === "Git-Version Control") {
+				that.state = versionControl
 			} else if ($(this).text() === "JavaScript-Advanced Topics") {
 				that.state = advancedJavascript;
 			} else if ($(this).text() === "HTML/CSS") {
@@ -17269,16 +17316,33 @@ class QuizApp {
 	}
 
 	renderMainPageMarkUp() {
-		$("main").fadeIn(1200).show()
+		$("main").fadeIn(200).show()
 	}
 	
 	mainPageStyleRender() {
-		$('link[href="stylesheets/style2.css"]').attr({'href' : "stylesheets/style1.css"})
+		$("section").removeClass(".section")
+		$(".container").removeClass("container-2")
+		$("h2").removeClass("h2")
+		$("h3").removeClass("h3")
+		$("input").removeClass("input-class")
+		$("label").removeClass("label")
+		$("section").removeClass("section")
+
+		$("p").addClass("par")
+		// $('link[href="stylesheets/style2.css"]').attr({'href' : "stylesheets/style1.css"})
 	}
 
 	quizStyleRender() {
 		$(".quiz-btn").click(function() {
-			$('link[href="stylesheets/style1.css"]').attr({'href' : "stylesheets/style2.css"})
+			$("section").addClass("section")
+			$(".container").addClass("container-2")
+			$("h2").addClass("h2")
+			$("h3").addClass("h3")
+			$("input").addClass("input-class")
+			$("label").addClass("label")
+			
+			$("p").removeClass("par")
+			// $('link[href="stylesheets/style1.css"]').attr({'href' : "stylesheets/style2.css"})
 		})
 	}
 	
@@ -17444,7 +17508,7 @@ class QuizApp {
 	}
 	
 	hideMainPageImages() {
-		$(".quiz-btn, .results-btn, .img-cont").click(() => {
+		$(".quiz-btn, .results-btn").click(() => {
 			$(".img-cont").hide();
 		})
 	}
@@ -17507,6 +17571,7 @@ class QuizApp {
 
 	backToMainPage() {
 		$(".back-to-main").click(() => {
+			this.hideQuiz();
 			this.mainPageStyleRender();
 			this.renderMainPageMarkUp();
 			this.mainPageHeaderShow();
@@ -17518,7 +17583,6 @@ class QuizApp {
 			this.hideResultsBtn();
 			this.showNextQuesButton();
 			this.finalScoreHide();
-			this.hideQuiz();
 			this.disableNextButton();
 			this.hideGoToExampleCodeText()
 		})
@@ -17572,6 +17636,7 @@ class QuizApp {
 
 	init() {
 		this.hideQuiz();
+		this.mainPageStyleRender();
 		this.whichQuiz();
 		this.renderQuizMarkup();
 		this.quizStyleRender();
@@ -17599,4 +17664,4 @@ app.init()
 
 
 
-},{"./html-css-quiz.js":2,"./js-advanced.js":3,"./js-fundementals-quiz.js":4,"lodash":1}]},{},[5]);
+},{"./git-quiz.js":2,"./html-css-quiz.js":3,"./js-advanced.js":4,"./js-fundementals-quiz.js":5,"lodash":1}]},{},[6]);

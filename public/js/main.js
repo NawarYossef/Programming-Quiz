@@ -3,6 +3,7 @@
 const javascriptFundementals = require('./js-fundementals-quiz.js');
 const advancedJavascript = require('./js-advanced.js');
 const htmlCss = require('./html-css-quiz.js');
+const versionControl = require('./git-quiz.js');
 const _ = require('lodash');
 
 class QuizApp {
@@ -19,6 +20,8 @@ class QuizApp {
 		$(".quiz-btn").click(function() {
 			if($(this).text() === "JavaScript-Fundemental") {
 				that.state = javascriptFundementals;
+			} else if ($(this).text() === "Git-Version Control") {
+				that.state = versionControl
 			} else if ($(this).text() === "JavaScript-Advanced Topics") {
 				that.state = advancedJavascript;
 			} else if ($(this).text() === "HTML/CSS") {
@@ -44,12 +47,27 @@ class QuizApp {
 	}
 	
 	mainPageStyleRender() {
-		$('link[href="stylesheets/style2.css"]').attr({'href' : "stylesheets/style1.css"})
+		$("section").removeClass(".section")
+		$(".container").removeClass("container-2")
+		$("h2").removeClass("h2")
+		$("h3").removeClass("h3")
+		$("input").removeClass("input-class")
+		$("label").removeClass("label")
+		$("section").removeClass("section")
+
+		$("p").addClass("par")
 	}
 
 	quizStyleRender() {
 		$(".quiz-btn").click(function() {
-			$('link[href="stylesheets/style1.css"]').attr({'href' : "stylesheets/style2.css"})
+			$("section").addClass("section")
+			$(".container").addClass("container-2")
+			$("h2").addClass("h2")
+			$("h3").addClass("h3")
+			$("input").addClass("input-class")
+			$("label").addClass("label")
+			
+			$("p").removeClass("par")
 		})
 	}
 	
@@ -215,7 +233,7 @@ class QuizApp {
 	}
 	
 	hideMainPageImages() {
-		$(".quiz-btn, .results-btn, .img-cont").click(() => {
+		$(".quiz-btn, .results-btn").click(() => {
 			$(".img-cont").hide();
 		})
 	}
@@ -278,6 +296,7 @@ class QuizApp {
 
 	backToMainPage() {
 		$(".back-to-main").click(() => {
+			this.hideQuiz();
 			this.mainPageStyleRender();
 			this.renderMainPageMarkUp();
 			this.mainPageHeaderShow();
@@ -289,7 +308,6 @@ class QuizApp {
 			this.hideResultsBtn();
 			this.showNextQuesButton();
 			this.finalScoreHide();
-			this.hideQuiz();
 			this.disableNextButton();
 			this.hideGoToExampleCodeText()
 		})
@@ -343,6 +361,7 @@ class QuizApp {
 
 	init() {
 		this.hideQuiz();
+		this.mainPageStyleRender();
 		this.whichQuiz();
 		this.renderQuizMarkup();
 		this.quizStyleRender();

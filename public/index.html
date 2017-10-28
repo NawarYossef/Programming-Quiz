@@ -14,43 +14,43 @@
 <body>
   <h1>CoderQuiz</h1>
   <div class="img-cont">
-    <img src="images/css.png">
-    <img src="images/html.png">
-    <img src="images/javascript.png">
+    <img src="images/css.png" alt="No CSS image">
+    <img src="images/html.png" alt="No HTML image">
+    <img src="images/javascript.png"  alt="JavaScript image">
   </div>
   <main role="main">
     <div class="container">
-      <h2>Get Your Code On!</h2>
+      <h2 class="h2">Get Your Code On!</h2>
     </div>
 
     <div class="container">
-      <p class="topic-text">Choose a topic</p>
+      <p class="topic-text par">Choose a topic</p>
       <ul>
         <li class="quiz-btn">JavaScript-Fundemental</li>
         <li class="quiz-btn">JavaScript-Advanced Topics</li>
         <li class="quiz-btn">HTML/CSS</li>
-        <!-- <li class="quiz-btn">Git-Version Control</li> -->
+        <li class="quiz-btn">Git-Version Control</li>
       </ul>
     </div>
   </main> 
  
-  <section class="questions" role="section">
-    <div class="container cont-q">
-      <h3 class="question"></h3>
+  <section class="questions" role="region">
+    <div class="container container-2 cont-q">
+      <h3 class="question h3"></h3>
     </div>
 		<div class="container ques-form">
 			<form id="my-form">
         <div class="option">
-          <input type="radio" id="1" name="choice"><label><p class="answer"></p></label>
+          <input type="radio" id="1" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
         </div>
         <div class="option">
-          <input type="radio" id="2" name="choice"><label><p class="answer"></p></label>
+          <input type="radio" id="2" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
         </div>
         <div class="option">
-          <input type="radio" id="3" name="choice"><label><p class="answer"></p></label>
+          <input type="radio" id="3" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
         </div>
         <div class="option">
-          <input type="radio" id="4" name="choice"><label><p class="answer"></p></label>
+          <input type="radio" id="4" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
         </div>
 				
       </form>
@@ -84,8 +84,8 @@
     </div>
 
     <div class="final-score">
-      <h3>Results</h3>
-      <ul>
+      <h3 class="h3 res">Results</h3>
+      <ul class="list-score">
         <li class="total-q">Total Number of Question: <span class="num"></span></li>
         <li class="corr-ans">Correct Answers: <span class="num"></span></li>
         <li class="wrn-ans">Incorrect Answers: <span class="num"></span></li>

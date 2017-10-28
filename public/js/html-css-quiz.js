@@ -5,7 +5,6 @@ let data = {
 	1: {
 		question: 'In this code example(click on Code Example button to view code), which css rule we need to add in order to align the two squares?',
     answers: [".square1 {display: inline-block; }", ".square2 {float: left}", ".square1, .square2 {align: both}", ".square2 {display: inline}"],
-    link: "https://codepen.io/nawaryossef/pen/PJLoRe",
     correctAnswer: 1
 	},
 	2: {
@@ -22,7 +21,6 @@ let data = {
 	4: {
 		question: 'In this code example, which CSS rule can be used to add to only display the text inside the blue box?',
     answers: ["{display: none;}", "{apply(css.div)}", "{hide: text;}", "{overflow: hidden;}"],
-    link: "https://codepen.io/nawaryossef/pen/pNKavm",
     correctAnswer: 4
 	},
 	5: {
