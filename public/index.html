@@ -40,19 +40,20 @@
     </div>
 		<div class="container ques-form">
 			<form id="my-form">
-        <div class="option">
-          <input type="radio" id="1" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
-        </div>
-        <div class="option">
-          <input type="radio" id="2" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
-        </div>
-        <div class="option">
-          <input type="radio" id="3" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
-        </div>
-        <div class="option">
-          <input type="radio" id="4" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
-        </div>
-				
+        <fieldset>
+          <div class="option">
+            <input type="radio" role="radio" id="1" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+          <div class="option">
+            <input type="radio" role="radio" id="2" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+          <div class="option">
+            <input type="radio" role="radio" id="3" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+          <div class="option">
+            <input type="radio" role="radio" id="4" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+      </fieldset>
       </form>
 
       <div class="correct-ans">
@@ -75,10 +76,10 @@
     </div>
 
     <div class="btn-nav">
-      <input type="button" class="back-to-main" value="Back To Main Page">
-      <input type="button" class="next-q-btn" value="Next Question" disabled>
+      <input type="button" role="button" class="back-to-main" value="Back To Main Page">
+      <input type="button" role="button" class="next-q-btn" value="Next Question" disabled>
       <a class="example" target="_blank">
-        <input type="button" class="code-example" value="Code Example">
+        <input type="button" role="button" class="code-example" value="Code Example">
       </a>
       <input type="button" class="results-btn" value="Results">
     </div>
@@ -91,7 +92,7 @@
         <li class="wrn-ans">Incorrect Answers: <span class="num"></span></li>
       </ul>
       <div class="btn-nav-final">
-        <input type="button" class="back-to-main" value="Back To Main Page">
+        <input type="button" role="button" class="back-to-main" value="Back To Main Page">
         <!-- <input type="button" class="retake-quiz" value="Resetart Quiz"> -->
       </div>
     </div>
