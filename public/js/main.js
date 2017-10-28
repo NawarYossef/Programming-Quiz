@@ -37,7 +37,7 @@ class QuizApp {
 	renderQuizMarkup() {
 		$(".quiz-btn").click(() => {
 			$("main").hide()
-			$(".ques-form, .cont-q, .btn-nav, .question-count").fadeIn(300)	
+			$(".ques-form, .cont-q, .btn-nav, .question-count").fadeIn(200)	
 			this.hideGoToExampleCodeText();
 		})
 	}
@@ -144,7 +144,7 @@ class QuizApp {
 	}
 
 	showForm() {
-		$("form").fadeIn(300).show();
+		$("form").fadeIn(200).show();
 	}
 
 	hideQuestion() {
@@ -239,7 +239,7 @@ class QuizApp {
 	}
 
 	showMainPageImages() {
-		$(".img-cont").fadeIn(500).show();
+		$(".img-cont").fadeIn(400).show();
 	}
 
 	updateStateForNextQuestion() {
