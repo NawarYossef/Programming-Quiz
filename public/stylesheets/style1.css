@@ -19,10 +19,11 @@ main {
 	margin-bottom: 20px;
 } 	
 
+.wrapper-for-h1 {
+	width: 100%;
+	text-align: center;
+}
  h1 {
-	 width: 30%;
-	 padding-left: 100px;
-	 margin: 20px auto 0 auto;
 	font: bold 4em 'Passion One', cursive;
   background: -webkit-linear-gradient(rgb(12, 0, 0), rgb(90, 87, 87));
   -webkit-background-clip: text;
@@ -35,15 +36,12 @@ h2 {
 }
 
 img {
-	width: 10%;
-	padding-left: 10px;
-	padding-top: 10px;
+	width: 5%;
 }
 
 .img-cont {
-	width: 30%;
-	margin: 0 auto;
-	padding-left: 350px;
+	width: 100%;
+	text-align: center;
 }
 
 ul li, p {
@@ -221,10 +219,7 @@ input[type=button]:hover {
 	}
 	 
 	h1 {
-		font-size: 3em;
-		width: 80%;
-		margin: 0 auto;
-		padding-left: 20px;
+		font-size: 2em;
 	}
 	
 	.total-q {
@@ -238,11 +233,10 @@ input[type=button]:hover {
 	ul {
 		width: 100%;
 	}
-	.img-cont {
-		width: 60%;
-		margin: 0 auto;
-		padding-left: 80px;
-	}
+	/* .img-cont {
+		width:100%;
+		text-align: center;
+	} */
 	
 	ul li {
 		font-size: 1em;
@@ -324,9 +318,6 @@ input[type=button]:hover {
 	 
 	h1 {
 		font-size: 3em;
-		width: 80%;
-		margin: 0 auto;
-		padding-left: 65px;
 	}
 
 	.total-q, .h3 {
@@ -339,11 +330,6 @@ input[type=button]:hover {
 
 	ul {
 		width: 100%;
-	}
-	.img-cont {
-		width: 60%;
-		margin: 0 auto;
-		padding-left: 110px;
 	}
 	
 	ul li {
@@ -426,9 +412,6 @@ input[type=button]:hover {
 	 
 	h1 {
 		font-size: 3em;
-    width: 60%;
-    margin: 0 auto;
-    padding-left: 30px;
 	}
 
 	.res {
@@ -441,11 +424,6 @@ input[type=button]:hover {
 
 	ul {
 		width: 100%;
-	}
-	.img-cont {
-		width: 60%;
-		margin: 0 auto;
-		padding-left: 140px;
 	}
 	
 	ul li {
@@ -528,9 +506,6 @@ input[type=button]:hover {
 	 
 	h1 {
 		font-size: 3em;
-    width: 40%;
-    margin: 0 auto;
-    padding-left: 80px;
 	}
 
 	.res {
@@ -543,11 +518,6 @@ input[type=button]:hover {
 
 	ul {
 		width: 100%;
-	}
-	.img-cont {
-		width: 60%;
-		margin: 0 auto;
-		padding-left: 280px;
 	}
 	
 	ul li {
@@ -630,9 +600,6 @@ input[type=button]:hover {
 	 
 	h1 {
 		font-size: 3em;
-    width: 30%;
-    margin: 0 auto;
-    padding-left: 80px;
 	}
 
 	.res {
@@ -645,11 +612,6 @@ input[type=button]:hover {
 
 	ul {
 		width: 100%;
-	}
-	.img-cont {
-		width: 60%;
-		margin: 0 auto;
-		padding-left: 380px;
 	}
 	
 	ul li {
@@ -727,18 +689,10 @@ input[type=button]:hover {
 @media only screen and (min-width : 1025px) and (max-width : 1440px) {
 	h1 {
 		font-size: 4em;
-		width: 25%;
-		padding-right: 60px;
 	}
 
 	h2 {
 		font-size: 3em;
-	}
-
-	.img-cont {
-		width: 40%;
-		margin: 0 auto;
-		padding-left: 360px;
 	}
 
 	ul {
@@ -754,14 +708,6 @@ input[type=button]:hover {
 @media only screen and (min-width : 1441px) and (max-width : 2560px) {
 	h1 {
 		font-size: 4em;
-		width: 25%;
-		padding-left: 320px;
-	}
-
-	.img-cont {
-		width: 20%;
-		margin: 0 auto;
-		padding-left: 320px;
 	}
 }
 
