@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Coder Quiz</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style1.css">
+  <link href="https://fonts.googleapis.com/css?family=Concert+One|Katibeh|Open+Sans" rel="stylesheet">
+  <!--<link rel="stylesheet" type="text/css" href="stylesheets/modules/sass.css">-->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+<!--   <script type="text/javascript" src="js/main.js"></script> -->
+</head>
+<body>
+  <div class="wrapper-for-h1">
+    <h1>CoderQuiz</h1>
+  </div>
+  <div class="img-cont">
+    <img src="images/css.png" alt="No CSS image">
+    <img src="images/html.png" alt="No HTML image">
+    <img src="images/javascript.png"  alt="JavaScript image">
+  </div>
+  <main role="main">
+    <div class="container">
+      <h2 class="h2">Get Your Code On!</h2>
+    </div>
+
+    <div class="container">
+      <p class="topic-text par">Choose a topic</p>
+      <ul>
+        <li class="quiz-btn">JavaScript-Fundemental</li>
+        <li class="quiz-btn">JavaScript-Advanced Topics</li>
+        <li class="quiz-btn">HTML/CSS</li>
+        <li class="quiz-btn">Git-Version Control</li>
+      </ul>
+    </div>
+  </main>
+
+  <section class="questions" role="region">
+    <div class="container container-2 cont-q">
+      <h3 class="question h3"></h3>
+    </div>
+		<div class="container ques-form">
+			<form id="my-form">
+        <fieldset>
+          <div class="option">
+            <input type="radio" role="radio" id="1" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+          <div class="option">
+            <input type="radio" role="radio" id="2" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+          <div class="option">
+            <input type="radio" role="radio" id="3" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+          <div class="option">
+            <input type="radio" role="radio" id="4" class="input-class" name="choice"><label class="label"><p class="answer"></p></label>
+          </div>
+      </fieldset>
+      </form>
+
+      <div class="correct-ans">
+          <p><span class="symb">&#10004;</span>Correct! Select next to continue.</p>
+      </div>
+
+      <div class="wrong-ans">
+          <p>
+            <span class="symb">&#10006;Incorrect.</span><br /><br />
+            <span class="corr">Correct Answer:
+              <span class="corr-text"></span>
+            </span>
+          </p>
+      </div>
+
+      <div class="count">
+        <p class="question-count"></p>
+      </div>
+      <div class="count-q"></div>
+    </div>
+
+    <div class="btn-nav">
+      <input type="button" role="button" class="back-to-main" value="Main Page">
+      <input type="button" role="button" class="next-q-btn" value="Next Question" disabled>
+      <a class="example" target="_blank">
+        <input type="button" role="button" class="code-example" value="Code Example">
+      </a>
+      <input type="button" class="results-btn" value="Results">
+    </div>
+
+    <div class="final-score">
+      <h3 class="h3 res">Results</h3>
+      <ul class="list-score">
+        <li class="total-q">Total Number of Question: <span class="num"></span></li>
+        <li class="corr-ans">Correct Answers: <span class="num"></span></li>
+        <li class="wrn-ans">Incorrect Answers: <span class="num"></span></li>
+      </ul>
+      <div class="btn-nav-final">
+        <input type="button" role="button" class="back-to-main" value="Back To Main Page">
+        <!-- <input type="button" class="retake-quiz" value="Resetart Quiz"> -->
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" src="/js/bundle.js"></script>
+</body>
+</html>
